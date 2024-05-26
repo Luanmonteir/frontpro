@@ -1,0 +1,26 @@
+.nav {
+  background-color: var(--bg-color);
+  padding: 1rem;
+  border-bottom: 1px solid var(--text-color);
+}
+
+.ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.li {
+  margin: 0;
+}
+
+.a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.a:hover {
+  text-decoration: underline;
+}

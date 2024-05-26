@@ -1,0 +1,21 @@
+.userList {
+  margin-top: 1rem;
+}
+
+.loading {
+  text-align: center;
+}
+
+.ul {
+  list-style: none;
+  padding: 0;
+}
+
+.li {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  border-radius: 4px;
+}

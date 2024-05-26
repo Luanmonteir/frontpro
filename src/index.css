@@ -1,0 +1,16 @@
+body.light {
+  --bg-color: white;
+  --text-color: black;
+}
+
+body.dark {
+  --bg-color: black;
+  --text-color: white;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
