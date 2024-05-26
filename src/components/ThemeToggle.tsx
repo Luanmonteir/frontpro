@@ -7,8 +7,8 @@ const ThemeToggle: React.FC = () => {
 
   return (
     <div className={styles.toggle}>
-      <p>Current Theme: {theme}</p>
-      <button className={styles.button} onClick={toggleTheme}>Toggle Theme</button>
+      <p>Modo: {theme}</p>
+      <button className={styles.button} onClick={toggleTheme}>Clique Aqui</button>
     </div>
   );
 };
