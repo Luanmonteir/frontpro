@@ -1,29 +1,63 @@
-.counter {
+.counterContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+  border-radius: 7px;
+  letter-spacing: 3px;
+  padding: 20px;
+  width: 250px; /* Aumenta a largura */
+  height: 250px; /* Aumenta a altura */
+  transition: background-color 0.3s;
 }
 
-.buttons {
+.counterContainer.light {
+  background-color: rgb(113, 211, 244); /* Cor de fundo para o modo claro */
+}
+
+.counterContainer.dark {
+  background-color: rgb(93, 48, 137); /* Cor de fundo para o modo escuro */
+}
+
+.counterControls {
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; /* Aumenta o espaço abaixo dos controles */
 }
 
 .button {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
+  background-color: #444;
+  color: #fff;
   border: none;
-  border-radius: 4px;
+  padding: 10px 20px; /* Aumenta o tamanho dos botões */
+  margin: 0 10px;
   cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s;
 }
 
-.increment {
-  background-color: #28a745;
-  color: white;
+.button:hover {
+  background-color: #666;
 }
 
-.decrement {
-  background-color: #dc3545;
-  color: white;
+.count {
+  font-size: 2em; /* Aumenta o tamanho do texto do contador */
+  margin: 0 20px;
+}
+
+.resetButton {
+  background-color: #888;
+  color: #fff;
+  border: none;
+  padding: 10px 20px; /* Aumenta o tamanho do botão de reset */
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+.resetButton:hover {
+  background-color: #aaa;
 }

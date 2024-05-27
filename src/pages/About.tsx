@@ -7,7 +7,7 @@ const About: React.FC = () => {
   return (
     <div className={styles.page}>
       <Navbar />
-      <h1>API que fornece dados fictícios de usuários.</h1>
+      <h1>API que fornece dados fictícios de usuários</h1>
       <UserList />
     </div>
   );

@@ -1,22 +1,26 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useTheme } from '../contexts/ThemeContext';
 import styles from './UserList.module.css';
 
 interface User {
   id: number;
   name: string;
-  email: string; // Adicionando a propriedade email
+  email: string;
 }
 
 const UserList: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { darkMode } = useTheme();
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const response = await fetch('https://jsonplaceholder.typicode.com/users');
-      const data = await response.json();
-      setUsers(data);
-      setLoading(false);
+      try {
+        const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+        setUsers(response.data);
+      } catch (error) {
+        console.error('Erro ao buscar usuários:', error);
+      }
     };
 
     fetchUsers();
@@ -24,20 +28,12 @@ const UserList: React.FC = () => {
 
   return (
     <div className={styles.userList}>
-      {loading ? (
-        <p className={styles.loading}>Carregando...</p>
-      ) : (
-        <ul className={styles.ul}>
-          {users.map((user) => (
-            <li key={user.id} className={styles.li}>
-              <div>
-                <strong>{user.name}</strong>
-                <p>Email: {user.email}</p> {/* Exibindo o email */}
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
+      {users.map(user => (
+        <div key={user.id} className={`${styles.userCard} ${darkMode ? 'dark-mode' : 'light-mode'}`}>
+          <h2>{user.name}</h2>
+          <p>{user.email}</p>
+        </div>
+      ))}
     </div>
   );
 };

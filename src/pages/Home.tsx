@@ -1,18 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
-import ThemeToggle from '../components/ThemeToggle';
+import ToggleSwitch from '../components/ToggleSwitch';
+import Counter from '../components/Counter';
 import styles from './Home.module.css';
-import Counter from '../components/Counter'; 
 
 const Home: React.FC = () => {
-  return (
-    <div className={styles.page}>
-      <Navbar />
-      <h1>Página inicial</h1>
-      <ThemeToggle />
-      <Counter /> {/* Adicionando o Counter */}
-    </div>
+  const [darkMode, setDarkMode] = useState(false);
 
+  const handleThemeChange = (checked: boolean) => {
+    setDarkMode(checked);
+    if (checked) {
+      document.documentElement.classList.add('dark-mode');
+    } else {
+      document.documentElement.classList.remove('dark-mode');
+    }
+  };
+
+  return (
+    <div className={`${styles.page} ${darkMode ? styles.dark : styles.light}`}>
+      <Navbar />
+      <h1>Página Inicial</h1>
+      <div className={styles.themeSwitch}>
+        <ToggleSwitch onChange={handleThemeChange} />
+      </div>
+      <div className={styles.counterBox}>
+        <Counter darkMode={darkMode} />
+      </div>
+    </div>
   );
 };
 

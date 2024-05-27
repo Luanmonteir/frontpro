@@ -1,16 +1,24 @@
-body.light {
-  --bg-color: white;
-  --text-color: black;
-}
-
-body.dark {
-  --bg-color: black;
-  --text-color: white;
-}
-
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
+/* Estilos globais */
+body, html {
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.light-mode {
+  background-color: #fff;
+  color: #333;
+}
+
+.dark-mode .counterContainer, .dark-mode .userCard {
+  background-color: rebeccapurple; /* Cor de fundo para a caixa do contador e cartões de usuários no modo escuro */
+}
+
+.light-mode .counterContainer, .light-mode .userCard {
+  background-color: lightblue; /* Cor de fundo para a caixa do contador e cartões de usuários no modo claro */
 }
